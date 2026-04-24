@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://hnb4e65ukqhg"]
+
+[ext_resource type="PackedScene" uid="uid://ixpbnng1b0ba" path="res://Scenes/Player.tscn" id="1_0ba56"]
+[ext_resource type="Script" uid="uid://bn7mwog2bl8kd" path="res://Scripts/level.gd" id="1_8rbpu"]
+
+[node name="Level" type="Node3D" unique_id=1649283944]
+script = ExtResource("1_8rbpu")
+
+[node name="Player" parent="." unique_id=920272665 instance=ExtResource("1_0ba56")]
+
+[node name="Timer" type="Timer" parent="." unique_id=447201389]
+wait_time = 0.25
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

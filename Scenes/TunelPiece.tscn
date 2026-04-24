@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cyibw34jmj5mj"]
+
+[ext_resource type="Script" uid="uid://b7rxcp8l4acqp" path="res://Scripts/tunel_piece.gd" id="1_uslo4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7kj6g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uslo4"]
+
+[node name="TunelPiece" type="Node3D" unique_id=434877584]
+script = ExtResource("1_uslo4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1829369058]
+transform = Transform3D(60, 0, 0, 0, 1, 0, 0, 0, 10, 0, -7.5, 0)
+mesh = SubResource("BoxMesh_7kj6g")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1366955220]
+transform = Transform3D(60, 0, 0, 0, 1, 0, 0, 0, 10, 0, 7.5, 0)
+mesh = SubResource("BoxMesh_7kj6g")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=800037450]
+transform = Transform3D(1, 0, 0, 0, 15, 0, 0, 0, 10, -30, 0, 0)
+mesh = SubResource("BoxMesh_uslo4")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=2090921179]
+transform = Transform3D(1, 0, 0, 0, 15, 0, 0, 0, 10, 30, 0, 0)
+mesh = SubResource("BoxMesh_uslo4")

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ixpbnng1b0ba"]
+
+[ext_resource type="Script" uid="uid://bkhqq62fggdnv" path="res://Scripts/player.gd" id="1_kyqiw"]
+[ext_resource type="PackedScene" uid="uid://dwmyav7w3syvt" path="res://Assets/Striker.gltf" id="1_rpqav"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kyqiw"]
+size = Vector3(1.0327148, 1, 1)
+
+[node name="Player" type="Area3D" unique_id=920272665]
+script = ExtResource("1_kyqiw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1081713230]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("BoxShape3D_kyqiw")
+
+[node name="Striker" parent="." unique_id=582870428 instance=ExtResource("1_rpqav")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1308437923]
+transform = Transform3D(-1, 0, -8.742278e-08, -1.4967517e-09, 0.99985343, 0.017120844, 8.7409965e-08, 0.017120844, -0.99985343, 0, 1.8170481, -8.994918)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=282147171]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2888987, -4.6660867)
+omni_range = 50.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=943406355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2888987, 17.473846)
+omni_range = 50.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=888937339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2888987, 53.278835)
+omni_range = 50.0
+
+[node name="Timer" type="Timer" parent="." unique_id=1264318445]
+wait_time = 0.5
+one_shot = true
+autostart = true
