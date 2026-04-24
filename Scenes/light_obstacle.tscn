@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://pkvjyx8n5ond"]
+
+[ext_resource type="Script" uid="uid://dhvwkw16pducd" path="res://Scripts/light_obstacle.gd" id="1_3jd57"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3jd57"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8hakk"]
+
+[node name="LightObstacle" type="Area3D" unique_id=1878388571]
+script = ExtResource("1_3jd57")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1702466970]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("BoxMesh_3jd57")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2014035584]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("BoxShape3D_8hakk")

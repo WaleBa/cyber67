@@ -41,20 +41,29 @@ func get_input(delta):
 			return
 		var bullet = projectile.instantiate()
 		bullet.position = position
-		get_tree().root.add_child(bullet)
+		bullet.target_x = target_x
+		get_parent().add_child(bullet)
 		$Timer.start()
 
 func _physics_process(delta):
 	match(direction):
 		LEFT:
 			if(position.distance_to(Vector3(target_x,0,0)) > 2.5):
-				$Striker.rotation.z = lerp($Striker.rotation.z, deg_to_rad(-30), SPEED * 3 * delta)
+				$Striker.rotation.z = lerp($Striker.rotation.z, deg_to_rad(-30), SPEED * 3 * delta * get_parent().GLOBAL_SPEED)
 			else:
-				$Striker.rotation.z = lerp($Striker.rotation.z, deg_to_rad(0), SPEED * 3 * delta)
+				$Striker.rotation.z = lerp($Striker.rotation.z, deg_to_rad(0), SPEED * 3 * delta * get_parent().GLOBAL_SPEED)
 		RIGHT:
 			if(position.distance_to(Vector3(target_x,0,0)) > 2.5):
-				$Striker.rotation.z = lerp($Striker.rotation.z, deg_to_rad(30), SPEED * 3 * delta)
+				$Striker.rotation.z = lerp($Striker.rotation.z, deg_to_rad(30), SPEED * 3 * delta * get_parent().GLOBAL_SPEED)
 			else:
-				$Striker.rotation.z = lerp($Striker.rotation.z, deg_to_rad(0), SPEED * 3 * delta)
+				$Striker.rotation.z = lerp($Striker.rotation.z, deg_to_rad(0), SPEED * 3 * delta * get_parent().GLOBAL_SPEED)
 	
-	position.x = lerp(position.x, target_x, SPEED * delta)
+	position.x = lerp(position.x, target_x, SPEED * delta  * get_parent().GLOBAL_SPEED)
+
+
+func _on_area_entered(area: Area3D) -> void:
+	print("nn")
+	if(area is light_obstacle):
+		print("l")
+	elif(area is hard_obstacle):
+		print("h")

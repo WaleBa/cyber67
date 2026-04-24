@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c8a7f5tiuhi6y"]
+
+[ext_resource type="Script" uid="uid://c4akugnodvbn2" path="res://Scripts/hard_obstacle.gd" id="1_0f8b6"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0kmqb"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bvtuy"]
+
+[node name="HardObstacle" type="Area3D" unique_id=1878388571]
+script = ExtResource("1_0f8b6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1702466970]
+transform = Transform3D(10, 0, 0, 0, 30, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("CylinderMesh_0kmqb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2014035584]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("CylinderShape3D_bvtuy")

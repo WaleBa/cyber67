@@ -20,11 +20,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014, 0, 0)
 transform = Transform3D(-1, 0, -8.742278e-08, -1.4967517e-09, 0.99985343, 0.017120844, 8.7409965e-08, 0.017120844, -0.99985343, 0, 1.8170481, -8.994918)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=282147171]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
-omni_range = 50.0
+visible = false
+omni_range = 150.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=943406355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
+omni_range = 50.0
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="." unique_id=1788731946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 omni_range = 50.0
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=888937339]
@@ -37,6 +41,7 @@ omni_range = 50.0
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="." unique_id=137156563]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 200)
+visible = false
 omni_range = 50.0
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="." unique_id=1764802329]
@@ -47,3 +52,5 @@ omni_range = 50.0
 wait_time = 0.5
 one_shot = true
 autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
