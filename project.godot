@@ -10,7 +10,7 @@ config_version=5
 
 [addons]
 
-wc_spawn_pool/max_waiting=69
+wc_spawn_pool/max_waiting=100
 
 [application]
 

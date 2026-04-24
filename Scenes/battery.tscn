@@ -1,13 +1,22 @@
 [gd_scene format=3 uid="uid://ba2isfcsmaglw"]
 
+[ext_resource type="Script" uid="uid://cnwkjj28ecjr0" path="res://Scripts/battery.gd" id="1_mjabg"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c8b8h"]
 albedo_color = Color(0, 1, 1, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_c8b8h"]
 material = SubResource("StandardMaterial3D_c8b8h")
 
-[node name="sampleObject" type="Node3D" unique_id=1315027585]
+[sub_resource type="BoxShape3D" id="BoxShape3D_mjabg"]
+
+[node name="battery" type="Area3D" unique_id=1496612435]
+script = ExtResource("1_mjabg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1702466970]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("SphereMesh_c8b8h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1999078577]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("BoxShape3D_mjabg")

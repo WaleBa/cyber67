@@ -6,7 +6,7 @@ var difficulty = 4
 var GLOBAL_SPEED = 1.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	WCSpawnPool.refill(tunel_scene, 50)
+	WCSpawnPool.refill(tunel_scene, 99)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

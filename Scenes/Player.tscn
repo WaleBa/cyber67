@@ -53,4 +53,43 @@ wait_time = 0.5
 one_shot = true
 autostart = true
 
+[node name="Control" type="Control" parent="." unique_id=667843040]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Control" unique_id=637205089]
+layout_direction = 3
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -284.5
+offset_top = -76.0
+offset_right = 284.5
+grow_horizontal = 2
+grow_vertical = 0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Control" unique_id=266994612]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -5.0
+offset_top = -49.0
+offset_right = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+text = "0
+"
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b7rxcp8l4acqp" path="res://Scripts/tunel_piece.gd" id="1_uslo4"]
 [ext_resource type="PackedScene" uid="uid://c8a7f5tiuhi6y" path="res://Scenes/hard_obstacle.tscn" id="2_lnt7q"]
+[ext_resource type="PackedScene" uid="uid://ba2isfcsmaglw" path="res://Scenes/battery.tscn" id="3_0elfb"]
 [ext_resource type="PackedScene" uid="uid://pkvjyx8n5ond" path="res://Scenes/light_obstacle.tscn" id="3_k8t2r"]
 [ext_resource type="PackedScene" uid="uid://bnlkse6eqvkfu" path="res://Assets/tunel_z_wiatrakami.glb" id="3_lnt7q"]
 
@@ -40,6 +41,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
 [node name="right_marker" type="Marker3D" parent="obstacles/Node3D" unique_id=396874885]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
 
+[node name="battery" parent="obstacles/Node3D/right_marker" unique_id=1315027585 instance=ExtResource("3_0elfb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
+
 [node name="LightObstacle" parent="obstacles/Node3D/right_marker" unique_id=1878388571 instance=ExtResource("3_k8t2r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
 
@@ -52,12 +56,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
 
 [node name="LightObstacle" parent="obstacles/Node3D/center_marker" unique_id=1570872718 instance=ExtResource("3_k8t2r")]
 
+[node name="battery" parent="obstacles/Node3D/center_marker" unique_id=33755871 instance=ExtResource("3_0elfb")]
+
 [node name="left_marker" type="Marker3D" parent="obstacles/Node3D" unique_id=148722738]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
 
 [node name="HardObstacle" parent="obstacles/Node3D/left_marker" unique_id=1721268909 instance=ExtResource("2_lnt7q")]
 
 [node name="LightObstacle" parent="obstacles/Node3D/left_marker" unique_id=78817278 instance=ExtResource("3_k8t2r")]
+
+[node name="battery" parent="obstacles/Node3D/left_marker" unique_id=1953104388 instance=ExtResource("3_0elfb")]
 
 [node name="Node3D2" type="Node3D" parent="obstacles" unique_id=1920635714]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -150)
@@ -70,11 +78,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
 
 [node name="LightObstacle" parent="obstacles/Node3D2/right_marker" unique_id=862823419 instance=ExtResource("3_k8t2r")]
 
+[node name="battery" parent="obstacles/Node3D2/right_marker" unique_id=1762858672 instance=ExtResource("3_0elfb")]
+
 [node name="center_marker" type="Marker3D" parent="obstacles/Node3D2" unique_id=651288478]
 
 [node name="HardObstacle" parent="obstacles/Node3D2/center_marker" unique_id=504029276 instance=ExtResource("2_lnt7q")]
 
 [node name="LightObstacle" parent="obstacles/Node3D2/center_marker" unique_id=673374456 instance=ExtResource("3_k8t2r")]
+
+[node name="battery" parent="obstacles/Node3D2/center_marker" unique_id=936279811 instance=ExtResource("3_0elfb")]
 
 [node name="left_marker" type="Marker3D" parent="obstacles/Node3D2" unique_id=2044648605]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
@@ -82,6 +94,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
 [node name="HardObstacle" parent="obstacles/Node3D2/left_marker" unique_id=817285195 instance=ExtResource("2_lnt7q")]
 
 [node name="LightObstacle" parent="obstacles/Node3D2/left_marker" unique_id=1491416629 instance=ExtResource("3_k8t2r")]
+
+[node name="battery" parent="obstacles/Node3D2/left_marker" unique_id=1738970539 instance=ExtResource("3_0elfb")]
 
 [node name="Node3D3" type="Node3D" parent="obstacles" unique_id=855709080]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -250)
@@ -93,11 +107,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
 
 [node name="LightObstacle" parent="obstacles/Node3D3/right_marker" unique_id=860629175 instance=ExtResource("3_k8t2r")]
 
+[node name="battery" parent="obstacles/Node3D3/right_marker" unique_id=253272673 instance=ExtResource("3_0elfb")]
+
 [node name="center_marker" type="Marker3D" parent="obstacles/Node3D3" unique_id=1996000276]
 
 [node name="HardObstacle" parent="obstacles/Node3D3/center_marker" unique_id=742436817 instance=ExtResource("2_lnt7q")]
 
 [node name="LightObstacle" parent="obstacles/Node3D3/center_marker" unique_id=946409441 instance=ExtResource("3_k8t2r")]
+
+[node name="battery" parent="obstacles/Node3D3/center_marker" unique_id=908037530 instance=ExtResource("3_0elfb")]
 
 [node name="left_marker" type="Marker3D" parent="obstacles/Node3D3" unique_id=928316789]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
@@ -105,3 +123,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
 [node name="HardObstacle" parent="obstacles/Node3D3/left_marker" unique_id=782448923 instance=ExtResource("2_lnt7q")]
 
 [node name="LightObstacle" parent="obstacles/Node3D3/left_marker" unique_id=260118059 instance=ExtResource("3_k8t2r")]
+
+[node name="battery" parent="obstacles/Node3D3/left_marker" unique_id=2028350617 instance=ExtResource("3_0elfb")]

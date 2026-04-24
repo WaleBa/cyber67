@@ -9,6 +9,7 @@ const SPEED = 3
 
 var target_x = CENTER_X
 var direction
+var bullets = 0
 
 enum {
 	RIGHT,
@@ -16,7 +17,7 @@ enum {
 }
 
 func _ready() -> void:
-	pass 
+	pass
 
 func _process(delta: float) -> void:
 	get_input(delta)
@@ -39,11 +40,16 @@ func get_input(delta):
 	if Input.is_action_just_pressed("shoot"):
 		if(!$Timer.is_stopped()):
 			return
+		if($Control/ProgressBar.value != 0 or bullets == 0):
+			return
 		var bullet = projectile.instantiate()
 		bullet.position = position
 		bullet.target_x = target_x
 		get_parent().add_child(bullet)
 		$Timer.start()
+		bullets -= 1
+		$Control/Label.text = str(bullets)
+		$Control/ProgressBar.value = 100
 
 func _physics_process(delta):
 	match(direction):
@@ -59,7 +65,9 @@ func _physics_process(delta):
 				$Striker.rotation.z = lerp($Striker.rotation.z, deg_to_rad(0), SPEED * 3 * delta * get_parent().GLOBAL_SPEED)
 	
 	position.x = lerp(position.x, target_x, SPEED * delta  * get_parent().GLOBAL_SPEED)
-
+	
+	if($Control/ProgressBar.value != 0):
+		$Control/ProgressBar.value -= 3
 
 func _on_area_entered(area: Area3D) -> void:
 	print("nn")
@@ -67,3 +75,8 @@ func _on_area_entered(area: Area3D) -> void:
 		print("l")
 	elif(area is hard_obstacle):
 		print("h")
+	elif(area is battery):
+		bullets += 1
+		$Control/Label.text = str(bullets)
+		area.visible = false
+		print("bbbbbb")
