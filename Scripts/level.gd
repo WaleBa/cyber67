@@ -15,5 +15,5 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	var tunel := await WCSpawnPool.spawn_scene(tunel_scene)
-	tunel.position.z = 300
+	tunel.position.z = 1200
 	add_child(tunel)

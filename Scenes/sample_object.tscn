@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ba2isfcsmaglw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c8b8h"]
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_c8b8h"]
+material = SubResource("StandardMaterial3D_c8b8h")
+
+[node name="sampleObject" type="Node3D" unique_id=1315027585]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1702466970]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("SphereMesh_c8b8h")

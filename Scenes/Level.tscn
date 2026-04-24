@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ixpbnng1b0ba" path="res://Scenes/Player.tscn" id="1_0ba56"]
 [ext_resource type="Script" uid="uid://bn7mwog2bl8kd" path="res://Scripts/level.gd" id="1_8rbpu"]
+[ext_resource type="PackedScene" uid="uid://cyibw34jmj5mj" path="res://Scenes/TunelPiece.tscn" id="2_vsvp5"]
 
 [node name="Level" type="Node3D" unique_id=1649283944]
 script = ExtResource("1_8rbpu")
@@ -9,7 +10,10 @@ script = ExtResource("1_8rbpu")
 [node name="Player" parent="." unique_id=920272665 instance=ExtResource("1_0ba56")]
 
 [node name="Timer" type="Timer" parent="." unique_id=447201389]
-wait_time = 0.25
+wait_time = 3.0
 autostart = true
+
+[node name="TunelPiece" parent="." unique_id=434877584 instance=ExtResource("2_vsvp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 500)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
