@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ixpbnng1b0ba"]
 
 [ext_resource type="Script" uid="uid://bkhqq62fggdnv" path="res://Scripts/player.gd" id="1_kyqiw"]
-[ext_resource type="PackedScene" uid="uid://dwmyav7w3syvt" path="res://Assets/Striker.gltf" id="1_rpqav"]
+[ext_resource type="PackedScene" uid="uid://cdmmj7xnd3d0e" path="res://Assets/ff/only_NewShip-END.glb" id="2_kyqiw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kyqiw"]
 size = Vector3(1.0327148, 1, 1)
@@ -13,9 +13,6 @@ script = ExtResource("1_kyqiw")
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("BoxShape3D_kyqiw")
 
-[node name="Striker" parent="." unique_id=582870428 instance=ExtResource("1_rpqav")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014, 0, 0)
-
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1308437923]
 transform = Transform3D(-1, 0, -8.742278e-08, -1.4967517e-09, 0.99985343, 0.017120844, 8.7409965e-08, 0.017120844, -0.99985343, 0, 1.8170481, -8.994918)
 
@@ -25,18 +22,22 @@ omni_range = 150.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=943406355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
+light_energy = 3.0
 omni_range = 50.0
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="." unique_id=1788731946]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+light_energy = 3.0
 omni_range = 50.0
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=888937339]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 100)
+light_energy = 3.0
 omni_range = 50.0
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=495589482]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 150)
+light_energy = 3.0
 omni_range = 50.0
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="." unique_id=137156563]
@@ -46,6 +47,7 @@ omni_range = 50.0
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="." unique_id=1764802329]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 250)
+light_energy = 3.0
 omni_range = 50.0
 
 [node name="Timer" type="Timer" parent="." unique_id=1264318445]
@@ -89,7 +91,25 @@ offset_right = 5.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(2, 2)
-text = "0
+text = "3
 "
+
+[node name="points" type="Label" parent="Control" unique_id=1727141206]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -5.0
+offset_right = 5.0
+offset_bottom = 49.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+text = "3
+"
+
+[node name="Striker" parent="." unique_id=844696940 instance=ExtResource("2_kyqiw")]
+transform = Transform3D(-0.4, 0, -3.4969112e-08, 0, 0.4, 0, 3.4969112e-08, 0, -0.4, 0, 0, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1392010185]
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

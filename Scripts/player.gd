@@ -1,7 +1,7 @@
 extends Area3D
 
 var projectile = preload("res://Scenes/projectile.tscn")
-
+var points = 0
 const LEFT_X = 20.0
 const RIGHT_X= -20.0
 const CENTER_X = 0.0
@@ -9,7 +9,8 @@ const SPEED = 3
 
 var target_x = CENTER_X
 var direction
-var bullets = 0
+var bullets = 3
+
 
 enum {
 	RIGHT,
@@ -50,17 +51,19 @@ func get_input(delta):
 		bullets -= 1
 		$Control/Label.text = str(bullets)
 		$Control/ProgressBar.value = 100
+		$AudioStreamPlayer3D.stream = preload("res://Assets/sounds/shot.wav")
+		$AudioStreamPlayer3D.play()
 
 func _physics_process(delta):
 	match(direction):
 		LEFT:
 			if(position.distance_to(Vector3(target_x,0,0)) > 2.5):
-				$Striker.rotation.z = lerp($Striker.rotation.z, deg_to_rad(-30), SPEED * 3 * delta * get_parent().GLOBAL_SPEED)
+				$Striker.rotation.z = lerp($Striker.rotation.z, deg_to_rad(30), SPEED * 3 * delta * get_parent().GLOBAL_SPEED)
 			else:
 				$Striker.rotation.z = lerp($Striker.rotation.z, deg_to_rad(0), SPEED * 3 * delta * get_parent().GLOBAL_SPEED)
 		RIGHT:
 			if(position.distance_to(Vector3(target_x,0,0)) > 2.5):
-				$Striker.rotation.z = lerp($Striker.rotation.z, deg_to_rad(30), SPEED * 3 * delta * get_parent().GLOBAL_SPEED)
+				$Striker.rotation.z = lerp($Striker.rotation.z, deg_to_rad(-30), SPEED * 3 * delta * get_parent().GLOBAL_SPEED)
 			else:
 				$Striker.rotation.z = lerp($Striker.rotation.z, deg_to_rad(0), SPEED * 3 * delta * get_parent().GLOBAL_SPEED)
 	
@@ -68,15 +71,19 @@ func _physics_process(delta):
 	
 	if($Control/ProgressBar.value != 0):
 		$Control/ProgressBar.value -= 3
+		
+	points += 2
+	$Control/points.text = str(points)
 
 func _on_area_entered(area: Area3D) -> void:
 	print("nn")
 	if(area is light_obstacle):
-		print("l")
+		get_tree().reload_current_scene()
 	elif(area is hard_obstacle):
-		print("h")
+		get_tree().reload_current_scene()
 	elif(area is battery):
 		bullets += 1
 		$Control/Label.text = str(bullets)
 		area.visible = false
+		points += 100
 		print("bbbbbb")

@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	var tunel := await WCSpawnPool.spawn_scene(tunel_scene)
 	tunel.position.z = 1200
-	tunel.get_node("tunel_z_wiatrakami").get_node("AnimationPlayer").play("PlaneAction_002")
+	#tunel.get_node("tunel_Textura").get_node("AnimationPlayer").play("PlaneAction_002")
 	tunel.show_obstacles(difficulty)
 	add_child(tunel)
 	GLOBAL_SPEED += 0.01

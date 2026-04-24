@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dug7dqbjk0wuf"
+path="res://.godot/imported/pam 3.wav-a740f68a3d03d1b2cd55752172343d08.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/pam 3.wav"
+dest_files=["res://.godot/imported/pam 3.wav-a740f68a3d03d1b2cd55752172343d08.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

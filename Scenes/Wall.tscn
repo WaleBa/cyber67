@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b1wco61g8a1p2"]
+
+[ext_resource type="Script" uid="uid://mgvwea1pqthk" path="res://Scripts/wall.gd" id="1_8r34y"]
+[ext_resource type="PackedScene" uid="uid://x7naa3pw0hjb" path="res://Assets/ff/wall.glb" id="3_esmgw"]
+
+[node name="Wall" type="Node3D" unique_id=434877584]
+script = ExtResource("1_8r34y")
+
+[node name="wall" parent="." unique_id=873051557 instance=ExtResource("3_esmgw")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -160, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=554914506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.4681091, -404.02612)
+light_color = Color(1, 0.67058825, 0, 1)
+light_energy = 50.0
+omni_range = 137.89565
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1007027374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.4681091, -250.3402)
+light_color = Color(1, 0.67058825, 0, 1)
+light_energy = 50.0
+omni_range = 137.89565
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=1613188374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.4681091, 187.66335)
+light_color = Color(1, 0.67058825, 0, 1)
+light_energy = 50.0
+omni_range = 137.89565
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=1173183889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.4681091, 423.93665)
+light_color = Color(1, 0.67058825, 0, 1)
+light_energy = 50.0
+omni_range = 137.89565
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="." unique_id=1227430239]
+light_color = Color(0.7176471, 0, 0, 1)
+light_energy = 50.0
+omni_range = 150.0

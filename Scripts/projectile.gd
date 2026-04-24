@@ -21,6 +21,11 @@ func _on_area_entered(area: Area3D) -> void:
 	if(area is light_obstacle):
 		print("d")
 		area.destroy()
+		get_parent().get_node("Player").points += 250
+		get_parent().get_node("Player").get_node("AudioStreamPlayer3D").stream = preload("res://Assets/sounds/trrrt3.wav")
+		get_parent().get_node("Player").get_node("AudioStreamPlayer3D").play()
 		queue_free()
 	elif(area is hard_obstacle):
+		get_parent().get_node("Player").get_node("AudioStreamPlayer3D").stream = preload("res://Assets/sounds/trrrt3.wav")
+		get_parent().get_node("Player").get_node("AudioStreamPlayer3D").play()
 		queue_free()

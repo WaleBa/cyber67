@@ -26,7 +26,7 @@ func show_obstacles(number_of : int):
 					#.get_child(randi_range(0,1))
 		if(child.visible == false):
 			child.visible = true
-			child = child.get_child(randi_range(0,2))
+			child = child.get_child(randi_range(0,1))
 			child.visible = true
 			child.process_mode = Node.PROCESS_MODE_ALWAYS
 			n -= 1
